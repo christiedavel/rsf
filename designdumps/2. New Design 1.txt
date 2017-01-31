@@ -1,0 +1,19 @@
+Design Code: 2       Title: New Design 1       Date: 20040605
+
+Item           Item Code      Own Code       Height         Width          Top Face       Bottom Face    Left Face      Right Face     
+Artwork                                      200.00         200.00         100.00         100.00         100.00         100.00         
+Frame          001B           ~001B          237.00         237.00         55.00          55.00          55.00          55.00          
+Board          1008           ~1008          409.50         409.50         50.00          50.00          50.00          50.00          
+Frame          Y009A          ~Y009A         418.00         418.00         55.00          55.00          55.00          55.00          
+Glass          2mm            ~2mm           409.50         409.50         199.00         199.00         199.00         199.00         
+Back           back           ~back          409.50         409.50         199.00         199.00         199.00         199.00         
+
+
+Item           Item Code      Top Border     Bottom Border  Left Border    Right Border   Cost           Price          
+Artwork                       0.00           0.00           0.00           0.00           
+Frame          001B           0.00           0.00           0.00           0.00           35.45          141.45         
+Board          1008           55.75          55.75          55.75          55.75          52.35          208.88         
+Frame          Y009A          0.00           0.00           0.00           0.00           29.25          116.71         
+Glass          2mm            0.00           0.00           0.00           0.00           48.00          191.52         
+Back           back           0.00           0.00           0.00           0.00           30.26          120.73         
+

@@ -1,0 +1,9 @@
+Design Code: -1       Title: New Design 1       Date: 20170131
+
+Item           Item Code      Own Code       Height         Width          Top Face       Bottom Face    Left Face      Right Face     
+Artwork                                      200.00         200.00         100.00         100.00         100.00         100.00         
+
+
+Item           Item Code      Top Border     Bottom Border  Left Border    Right Border   Cost           Price          
+Artwork                       0.00           0.00           0.00           0.00           
+

@@ -1,0 +1,11 @@
+Design Code: 294       Title: New Design 2       Date: 20050411
+
+Item           Item Code      Own Code       Height         Width          Top Face       Bottom Face    Left Face      Right Face     
+Artwork                                      200.00         200.00         100.00         100.00         100.00         100.00         
+Board          1009           ~1009          300.00         300.00         50.00          50.00          50.00          50.00          
+
+
+Item           Item Code      Top Border     Bottom Border  Left Border    Right Border   Cost           Price          
+Artwork                       0.00           0.00           0.00           0.00           
+Board          1009           50.00          50.00          50.00          50.00          52.35          183.22         
+

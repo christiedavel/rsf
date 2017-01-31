@@ -1,0 +1,923 @@
+package artof.database;
+
+import java.util.*;
+import artof.utils.Utils;
+import artof.utils.UserSettings;
+import java.io.Serializable;
+
+import artof.designitems.*;
+import artof.designer.Designer;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.print.*;
+import java.awt.font.*;
+import java.awt.geom.*;
+
+/**
+ * <p>Title: </p>
+ * <p>Description: </p>
+ * <p>Copyright: Copyright (c) 2002</p>
+ * <p>Company: </p>
+ * @author unascribed
+ * @version 1.0
+ */
+
+public class DesignDets
+    implements Comparable, Comparator, Printable, Serializable {
+  private int designID = -1;
+  private String title = "New Design";
+  private int artistID = -1;
+  private int clientID = -1;
+  private String status;
+  private int desDate;
+  private float materialAdj = 0;
+  private float labourAdj = 0;
+  private boolean useWeighting = true;
+  private boolean useStretching = false;
+  private boolean usePasting = false;
+
+  private int deliveryDate = Utils.getCurrentDate();
+  private float priceOne = 0;
+  private float discountOne = 0;
+  private int noOrdered = 1;
+  private float priceOther = 0;
+  private float discountOther = 0;
+
+  private BusPrefDets busPrefs;
+  private MethodPrefDets methodPrefs;
+  private LinkedList itemList = new LinkedList();
+  private boolean modified = false;
+
+  private static TreeMap artistNaamIDMap = null;
+  private static TreeMap artistIDNaamMap = null;
+  private static TreeMap clientNaamIDMap = null;
+  private static TreeMap clientIDNaamMap = null;
+
+  public DesignDets(BusPrefDets busPrefs, MethodPrefDets methodPrefs,
+                    String title, ArtofDB db) throws NullPointerException {
+    if (busPrefs == null || methodPrefs == null || title == null) {
+      throw new NullPointerException();
+    }
+    else {
+      this.busPrefs = busPrefs;
+      this.methodPrefs = methodPrefs;
+      this.title = title;
+      if (artistNaamIDMap == null) {
+        updateArtistMaps(db);
+      }
+      if (clientNaamIDMap == null) {
+        updateArtistMaps(db);
+      }
+    }
+  }
+
+  public static void updateArtistMaps(ArtofDB db) {
+    try {
+      artistNaamIDMap = db.getArtists();
+      artistIDNaamMap = new TreeMap();
+      Iterator it = artistNaamIDMap.keySet().iterator();
+      while (it.hasNext()) {
+        String key = (String) it.next();
+        artistIDNaamMap.put(artistNaamIDMap.get(key), key);
+      }
+    }
+    catch (NullPointerException e) {
+      // doen niks
+    }
+  }
+
+  public static void updateClientMaps(ArtofDB db) {
+    try {
+      clientNaamIDMap = db.getClients();
+      clientIDNaamMap = new TreeMap();
+      Iterator it = clientNaamIDMap.keySet().iterator();
+      while (it.hasNext()) {
+        String key = (String) it.next();
+        clientIDNaamMap.put(clientNaamIDMap.get(key), key);
+      }
+    }
+    catch (NullPointerException e) {
+      // doen niks
+    }
+  }
+
+  public boolean isModified() {
+    if (modified || busPrefs.isModified() || methodPrefs.isModified()) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
+  public void setModified(boolean mod) {
+    modified = mod;
+  }
+
+  public int compareTo(Object obj) throws ClassCastException {
+    Integer curID = new Integer(designID);
+    Integer objID = new Integer( ( (DesignDets) obj).getDesignID());
+    return curID.compareTo(objID);
+  }
+
+  public int compare(Object o1, Object o2) throws ClassCastException {
+    return ( (DesignDets) o1).compareTo(o2);
+  }
+
+  public boolean equals(Object obj) {
+    try {
+      if ( ( (DesignDets) obj).getDesignID() == designID) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
+    catch (ClassCastException e) {
+      return false;
+    }
+  }
+
+  public int getDesignID() {
+    return designID;
+  }
+
+  public void setDesignID(int id) {
+    if (designID != id) {
+      designID = id;
+      setModified(true);
+    }
+  }
+
+  public String getTitle() {
+    if (title == null || title.equals("null")) {
+      return "";
+    }
+    else {
+      return title;
+    }
+  }
+
+  public void setTitle(String t) {
+    if ( (title != null && !title.equals(t)) || (title == null && t != null)) {
+      title = t;
+      setModified(true);
+    }
+  }
+
+  public int getArtistID() {
+    return artistID;
+  }
+
+  public void setArtistID(int id) {
+    if (artistID != id) {
+      artistID = id;
+      setModified(true);
+    }
+  }
+
+  public String getArtist() {
+    try {
+      return (String) artistIDNaamMap.get(new Integer(artistID));
+    }
+    catch (NullPointerException e) {
+      return "";
+    }
+    catch (IndexOutOfBoundsException e) {
+      return "";
+    }
+  }
+
+  public void setArtist(String artist) {
+    try {
+      artistID = ( (Integer) artistNaamIDMap.get(artist)).intValue();
+      int j = 0;
+    }
+    catch (NullPointerException e) {
+      artistID = -1;
+    }
+    catch (IndexOutOfBoundsException e) {
+      artistID = -1;
+    }
+  }
+
+  public static Iterator getArtistIterator() throws NullPointerException {
+    return artistNaamIDMap.keySet().iterator();
+  }
+
+  public int getClientID() {
+    return clientID;
+  }
+
+  public void setClientID(int id) {
+    if (clientID != id) {
+      clientID = id;
+      setModified(true);
+    }
+  }
+
+  public String getClient() {
+    try {
+      return (String) clientIDNaamMap.get(new Integer(clientID));
+    }
+    catch (NullPointerException e) {
+      return "";
+    }
+    catch (IndexOutOfBoundsException e) {
+      return "";
+    }
+  }
+
+  public void setClient(String client) {
+    try {
+      clientID = ( (Integer) clientNaamIDMap.get(client)).intValue();
+    }
+    catch (NullPointerException e) {
+      clientID = -1;
+    }
+    catch (IndexOutOfBoundsException e) {
+      clientID = -1;
+    }
+  }
+
+  public static Iterator getClientIterator() throws NullPointerException {
+    return clientNaamIDMap.keySet().iterator();
+  }
+
+  public static int getClientIDFromName(String name) {
+    try {
+      return ( (Integer) clientNaamIDMap.get(name)).intValue();
+    }
+    catch (NullPointerException e) {
+      return -1;
+    }
+  }
+
+  public String getStatus() {
+    if (status == null || status.equals("null")) {
+      return "";
+    }
+    else {
+      return status;
+    }
+  }
+
+  public void setStatus(String t) {
+    if ( (status != null && !status.equals(t)) || (status == null && t != null)) {
+      status = t;
+      setModified(true);
+    }
+  }
+
+  public int getDate() {
+    return desDate;
+  }
+
+  public void setDate(int d) {
+    if (desDate != d) {
+      desDate = d;
+      setModified(true);
+    }
+  }
+
+  public float getMaterialAdj() {
+    return materialAdj;
+  }
+
+  public void setMaterialAdj(float d) {
+    if (materialAdj != d) {
+      materialAdj = d;
+      setModified(true);
+    }
+  }
+
+  public float getLabourAdj() {
+    return labourAdj;
+  }
+
+  public void setLabourAdj(float d) {
+    if (labourAdj != d) {
+      labourAdj = d;
+      setModified(true);
+    }
+  }
+
+  public boolean getUseWeighting() {
+    return useWeighting;
+  }
+
+  public void setUseWeighting(boolean d) {
+    if (useWeighting != d) {
+      useWeighting = d;
+      setModified(true);
+    }
+  }
+
+  public int getUseWeightingInt() {
+    if (getUseWeighting()) {
+      return 1;
+    }
+    else {
+      return 0;
+    }
+  }
+
+  public void setUseWeighting(int d) {
+    if (d == 1) {
+      setUseWeighting(true);
+    }
+    else {
+      setUseWeighting(false);
+    }
+  }
+
+  public boolean getUseStretching() {
+    return useStretching;
+  }
+
+  public void setUseStretching(boolean d) {
+    if (useStretching != d) {
+      useStretching = d;
+      setModified(true);
+    }
+  }
+
+  public int getUseStretchingInt() {
+    if (getUseStretching()) {
+      return 1;
+    }
+    else {
+      return 0;
+    }
+  }
+
+  public void setUseStretching(int d) {
+    if (d == 1) {
+      setUseStretching(true);
+    }
+    else {
+      setUseStretching(false);
+    }
+  }
+
+  public boolean getUsePasting() {
+    return usePasting;
+  }
+
+  public void setUsePasting(boolean d) {
+    if (usePasting != d) {
+      usePasting = d;
+      setModified(true);
+    }
+  }
+
+  public int getUsePastingInt() {
+    if (getUsePasting()) {
+      return 1;
+    }
+    else {
+      return 0;
+    }
+  }
+
+  public void setUsePasting(int d) {
+    if (d == 1) {
+      setUsePasting(true);
+    }
+    else {
+      setUsePasting(false);
+    }
+  }
+
+  public int getDeliveryDate() {
+    return deliveryDate;
+  }
+
+  public void setDeliveryDate(int d) {
+    if (deliveryDate != d) {
+      deliveryDate = d;
+      setModified(true);
+    }
+  }
+
+  public float getPriceOne() {
+    return priceOne;
+  }
+
+  public void setPriceOne(float d) {
+    if (priceOne != d) {
+      priceOne = d;
+      setModified(true);
+    }
+  }
+
+  public float getDiscountOne() {
+    return discountOne;
+  }
+
+  public void setDiscountOne(float d) {
+    if (discountOne != d) {
+      discountOne = d;
+      setModified(true);
+    }
+  }
+
+  public int getNoOrdered() {
+    return noOrdered;
+  }
+
+  public void setNoOrdered(int d) {
+    if (noOrdered != d) {
+      noOrdered = d;
+      setModified(true);
+    }
+  }
+
+  public float getPriceOther() {
+    return priceOther;
+  }
+
+  public void setPriceOther(float d) {
+    if (priceOther != d) {
+      priceOther = d;
+      setModified(true);
+    }
+  }
+
+  public float getDiscountOther() {
+    return discountOther;
+  }
+
+  public void setDiscountOther(float d) {
+    if (discountOther != d) {
+      discountOther = d;
+      setModified(true);
+    }
+  }
+
+  public BusPrefDets getBusPrefs() {
+    return busPrefs;
+  }
+
+  public void setBusPrefs(BusPrefDets det) throws NullPointerException {
+    if (det == null) {
+      throw new NullPointerException();
+    }
+    else {
+      busPrefs = det;
+      setModified(true);
+    }
+  }
+
+  public MethodPrefDets getMethodPrefs() {
+    return methodPrefs;
+  }
+
+  public void setMethodPrefs(MethodPrefDets det) throws NullPointerException {
+    if (det == null) {
+      throw new NullPointerException();
+    }
+    else {
+      methodPrefs = det;
+      setModified(true);
+    }
+  }
+
+  public LinkedList getItemList() {
+    return itemList;
+  }
+
+  public void setItemList(LinkedList list) throws NullPointerException {
+    if (list == null) {
+      throw new NullPointerException();
+    }
+    else {
+      itemList = list;
+      setModified(true);
+    }
+  }
+
+      /******************************* Print kak ************************************/
+
+  public void printDesignQuotation() {
+    PrinterJob printerJob = PrinterJob.getPrinterJob();
+    Book book = new Book();
+    book.append(this, new PageFormat(), 1);
+    printerJob.setPageable(book);
+    boolean doPrint = printerJob.printDialog();
+    if (doPrint) {
+      try {
+        printerJob.print();
+      }
+      catch (PrinterException exception) {
+        JOptionPane.showMessageDialog(null,
+            "Printer error.  The clients details cannot be printed.", "Error",
+                                      JOptionPane.ERROR_MESSAGE);
+      }
+    }
+  }
+
+  public int print(Graphics g, PageFormat format, int pageIndex) {
+    Graphics2D g2d = (Graphics2D) g;
+    g2d.translate(format.getImageableX(), format.getImageableY());
+    g2d.setPaint(Color.black);
+    double pageWidth = format.getImageableWidth();
+    double pageHeight = format.getImageableHeight();
+    double curY = 0;
+
+    g2d.setFont(g2d.getFont().deriveFont(Font.BOLD, 15));
+    FontRenderContext frc = g2d.getFontRenderContext();
+    try {
+      TextLayout layout = new TextLayout(UserSettings.ownerCompany, g2d.getFont(),
+                                         frc);
+      Rectangle2D bounds = layout.getBounds();
+      curY += bounds.getHeight();
+      layout.draw(g2d, (float) (pageWidth / 2 - bounds.getWidth() / 2),
+                  (float) curY);
+      curY += bounds.getHeight() * 1.5;
+    }
+    catch (IllegalArgumentException e) {
+    }
+
+    g2d.setFont(g2d.getFont().deriveFont(Font.PLAIN, 8));
+    try {
+      String text = "";
+      if (UserSettings.ownerTel != null && !UserSettings.ownerTel.equals("")) {
+        text += "Tel: " + UserSettings.ownerTel;
+      }
+      if (UserSettings.ownerFax != null && !UserSettings.ownerFax.equals("")) {
+        text += "  " + "Fax: " + UserSettings.ownerFax;
+      }
+      if (UserSettings.ownerCel != null && !UserSettings.ownerCel.equals("")) {
+        text += "  " + "Cel: " + UserSettings.ownerCel;
+      }
+      if (UserSettings.ownerEmail != null && !UserSettings.ownerEmail.equals("")) {
+        text += "  " + "E-mail: " + UserSettings.ownerEmail;
+      }
+      TextLayout layout = new TextLayout(text, g2d.getFont(), frc);
+      Rectangle2D bounds = layout.getBounds();
+      curY += bounds.getHeight();
+      layout.draw(g2d, (float) (pageWidth / 2 - bounds.getWidth() / 2),
+                  (float) curY);
+      curY += bounds.getHeight();
+    }
+    catch (IllegalArgumentException e) {
+    }
+
+    try {
+      String text = "";
+      if (UserSettings.ownerAdd1 != null && !UserSettings.ownerAdd1.equals("")) {
+        text += UserSettings.ownerAdd1;
+      }
+      if (UserSettings.ownerAdd2 != null && !UserSettings.ownerAdd2.equals("")) {
+        text += "  " + UserSettings.ownerAdd2;
+      }
+      if (UserSettings.ownerAdd3 != null && !UserSettings.ownerAdd3.equals("")) {
+        text += "  " + UserSettings.ownerAdd3;
+      }
+      if (UserSettings.ownerCode != null && !UserSettings.ownerCode.equals("")) {
+        text += "  " + UserSettings.ownerCode;
+      }
+      TextLayout layout = new TextLayout(text, g2d.getFont(), frc);
+      Rectangle2D bounds = layout.getBounds();
+      curY += bounds.getHeight();
+      layout.draw(g2d, (float) (pageWidth / 2 - bounds.getWidth() / 2),
+                  (float) curY);
+      curY += bounds.getHeight();
+    }
+    catch (IllegalArgumentException e) {
+    }
+
+    g2d.setFont(g2d.getFont().deriveFont(Font.PLAIN, 10));
+    curY *= 2;
+    TextLayout layout = new TextLayout("0123456789012345", g2d.getFont(), frc);
+    double indent = layout.getBounds().getWidth() * 1.1;
+    double height;
+
+    // Eerste reel
+    layout = new TextLayout("Design ID:", g2d.getFont(), frc);
+    height = layout.getBounds().getHeight();
+    layout.draw(g2d, 0, (float) curY);
+    try {
+      layout = new TextLayout(String.valueOf(designID), g2d.getFont(), frc);
+      layout.draw(g2d, (float) indent, (float) curY);
+    }
+    catch (IllegalArgumentException e) {
+    }
+
+    layout = new TextLayout("Title:", g2d.getFont(), frc);
+    layout.draw(g2d, (float) pageWidth / 2, (float) curY);
+    try {
+      layout = new TextLayout(title, g2d.getFont(), frc);
+      layout.draw(g2d, (float) (indent + pageWidth / 2), (float) curY);
+    }
+    catch (IllegalArgumentException e) {
+    }
+
+    // Tweede reel
+    curY += height * 1.5;
+    layout = new TextLayout("Status:", g2d.getFont(), frc);
+    height = layout.getBounds().getHeight();
+    layout.draw(g2d, 0, (float) curY);
+    try {
+      layout = new TextLayout(status, g2d.getFont(), frc);
+      layout.draw(g2d, (float) indent, (float) curY);
+    }
+    catch (IllegalArgumentException e) {
+    }
+
+    layout = new TextLayout("Date:", g2d.getFont(), frc);
+    layout.draw(g2d, (float) pageWidth / 2, (float) curY);
+    try {
+      layout = new TextLayout(Utils.getDatumStr(desDate), g2d.getFont(), frc);
+      layout.draw(g2d, (float) (indent + pageWidth / 2), (float) curY);
+    }
+    catch (IllegalArgumentException e) {
+    }
+
+    // Derde reel
+    ArtofDB db = ArtofDB.getCurrentDB();
+    ClientDets client = db.getClient(getClientID());
+
+    curY += height * 1.7;
+    layout = new TextLayout("Name:", g2d.getFont(), frc);
+    height = layout.getBounds().getHeight();
+    layout.draw(g2d, 0, (float) curY);
+    try {
+      layout = new TextLayout(client.getName() + " " + client.getSurname(),
+                              g2d.getFont(), frc);
+      layout.draw(g2d, (float) indent, (float) curY);
+    }
+    catch (IllegalArgumentException e) {
+    }
+    catch (NullPointerException e) {
+    }
+
+    layout = new TextLayout("ID No:", g2d.getFont(), frc);
+    layout.draw(g2d, (float) pageWidth / 2, (float) curY);
+    try {
+      layout = new TextLayout(client.getIDNo(), g2d.getFont(), frc);
+      layout.draw(g2d, (float) (indent + pageWidth / 2), (float) curY);
+    }
+    catch (IllegalArgumentException e) {
+    }
+    catch (NullPointerException e) {
+    }
+
+    // Vierde reel
+    curY += height * 1.5;
+    layout = new TextLayout("Tel No:", g2d.getFont(), frc);
+    height = layout.getBounds().getHeight();
+    layout.draw(g2d, 0, (float) curY);
+    try {
+      layout = new TextLayout(client.getHomeTel(), g2d.getFont(), frc);
+      layout.draw(g2d, (float) indent, (float) curY);
+    }
+    catch (IllegalArgumentException e) {
+    }
+    catch (NullPointerException e) {
+    }
+
+    layout = new TextLayout("Address:", g2d.getFont(), frc);
+    layout.draw(g2d, (float) pageWidth / 2, (float) curY);
+    try {
+      layout = new TextLayout(client.getHomeAdd1(), g2d.getFont(), frc);
+      layout.draw(g2d, (float) (indent + pageWidth / 2), (float) curY);
+    }
+    catch (IllegalArgumentException e) {
+    }
+    catch (NullPointerException e) {
+    }
+
+    // Vyfde reel
+    curY += height * 1.5;
+    layout = new TextLayout("Cel No:", g2d.getFont(), frc);
+    height = layout.getBounds().getHeight();
+    layout.draw(g2d, 0, (float) curY);
+    try {
+      layout = new TextLayout(client.getHomeTel(), g2d.getFont(), frc);
+      layout.draw(g2d, (float) indent, (float) curY);
+    }
+    catch (IllegalArgumentException e) {
+    }
+    catch (NullPointerException e) {
+    }
+
+    try {
+      layout = new TextLayout(client.getHomeAdd2(), g2d.getFont(), frc);
+      layout.draw(g2d, (float) (indent + pageWidth / 2), (float) curY);
+    }
+    catch (IllegalArgumentException e) {
+    }
+    catch (NullPointerException e) {
+    }
+
+    // Sesde reel
+    curY += height * 1.5;
+    layout = new TextLayout("Fax No:", g2d.getFont(), frc);
+    height = layout.getBounds().getHeight();
+    layout.draw(g2d, 0, (float) curY);
+    try {
+      layout = new TextLayout(client.getHomeTel(), g2d.getFont(), frc);
+      layout.draw(g2d, (float) indent, (float) curY);
+    }
+    catch (IllegalArgumentException e) {
+    }
+    catch (NullPointerException e) {
+    }
+
+    try {
+      layout = new TextLayout(client.getHomeAdd3(), g2d.getFont(), frc);
+      layout.draw(g2d, (float) (indent + pageWidth / 2), (float) curY);
+    }
+    catch (IllegalArgumentException e) {
+    }
+    catch (NullPointerException e) {
+    }
+
+    // Sewende reel
+    curY += height * 1.5;
+    layout = new TextLayout("E-mail:", g2d.getFont(), frc);
+    height = layout.getBounds().getHeight();
+    layout.draw(g2d, 0, (float) curY);
+    try {
+      layout = new TextLayout(client.getHomeTel(), g2d.getFont(), frc);
+      layout.draw(g2d, (float) indent, (float) curY);
+    }
+    catch (IllegalArgumentException e) {
+    }
+    catch (NullPointerException e) {
+    }
+
+    try {
+      layout = new TextLayout(client.getHomeAdd4(), g2d.getFont(), frc);
+      layout.draw(g2d, (float) (indent + pageWidth / 2), (float) curY);
+    }
+    catch (IllegalArgumentException e) {
+    }
+    catch (NullPointerException e) {
+    }
+
+    // Agste reel
+    curY += height * 1.5;
+    layout = new TextLayout("Code:", g2d.getFont(), frc);
+    layout.draw(g2d, (float) pageWidth / 2, (float) curY);
+    try {
+      layout = new TextLayout(client.getHomeCode(), g2d.getFont(), frc);
+      layout.draw(g2d, (float) (indent + pageWidth / 2), (float) curY);
+    }
+    catch (IllegalArgumentException e) {
+    }
+    catch (NullPointerException e) {
+    }
+
+    // Neende reel
+    curY += height * 2.5;
+    layout = new TextLayout("Border Type:", g2d.getFont(), frc);
+    height = layout.getBounds().getHeight();
+    layout.draw(g2d, 0, (float) curY);
+    try {
+      layout = new TextLayout(methodPrefs.BORDER_TYPE[methodPrefs.getMethodType()],
+                              g2d.getFont(), frc);
+      layout.draw(g2d, (float) indent, (float) curY);
+    }
+    catch (IllegalArgumentException e) {
+    }
+
+    layout = new TextLayout("Full Bottoms:", g2d.getFont(), frc);
+    layout.draw(g2d, (float) pageWidth / 2, (float) curY);
+    try {
+      if (methodPrefs.getFullBottomsBool()) {
+        layout = new TextLayout("Yes", g2d.getFont(), frc);
+      }
+      else {
+        layout = new TextLayout("No", g2d.getFont(), frc);
+      }
+      layout.draw(g2d, (float) (indent + pageWidth / 2), (float) curY);
+    }
+    catch (IllegalArgumentException e) {
+    }
+
+    // Tiende reel
+    curY += height * 1.5;
+    layout = new TextLayout("Price:", g2d.getFont(), frc);
+    height = layout.getBounds().getHeight();
+    layout.draw(g2d, 0, (float) curY);
+    try {
+      String text = Utils.getCurrencyFormat(priceOne) + " includes ";
+      text += Utils.getCurrencyFormat(busPrefs.getVATPerc()) + "% VAT";
+      layout = new TextLayout(text, g2d.getFont(), frc);
+      layout.draw(g2d, (float) indent, (float) curY);
+    }
+    catch (IllegalArgumentException e) {
+    }
+
+    // Elfde reel
+    curY += height * 1.5;
+    layout = new TextLayout("Total Price:", g2d.getFont(), frc);
+    height = layout.getBounds().getHeight();
+    layout.draw(g2d, 0, (float) curY);
+    float totalOne = getPriceOne() * (1 + busPrefs.getVATPerc() / 100) *
+        (100 - getDiscountOne()) / 100;
+    String text = Utils.getCurrencyFormat(totalOne);
+    text += " includes " + Utils.getCurrencyFormat(discountOne) + "% discount";
+    layout = new TextLayout(text, g2d.getFont(), frc);
+    layout.draw(g2d, (float) indent, (float) curY);
+
+    // Twaalfde reel
+    if (noOrdered > 1) {
+      curY += height * 1.5;
+      text = "Price for " + noOrdered + " items:";
+      layout = new TextLayout(text, g2d.getFont(), frc);
+      height = layout.getBounds().getHeight();
+      layout.draw(g2d, 0, (float) curY);
+
+      text = Utils.getCurrencyFormat(totalOne * noOrdered);
+      layout = new TextLayout(text, g2d.getFont(), frc);
+      layout.draw(g2d, (float) indent, (float) curY);
+    }
+
+    // Print ItemList
+    curY += height * 3.5;
+    layout = new TextLayout("01234567890", g2d.getFont(), frc);
+    Rectangle2D bounds = layout.getBounds();
+    double width1 = bounds.getWidth();
+    layout = new TextLayout("01234567", g2d.getFont(), frc);
+    bounds = layout.getBounds();
+    double width2 = bounds.getWidth();
+
+    double curX = addStringGap(g2d, frc, "Item", curY, 0, width1, false);
+    curX = addStringGap(g2d, frc, "Item Code", curY, curX, width1, false);
+    curX = addStringGap(g2d, frc, "Own Code", curY, curX, width1, false);
+    curX = addStringGap(g2d, frc, "Height", curY, curX, width2, true);
+    curX = addStringGap(g2d, frc, "Width", curY, curX, width2, true);
+    curX = addStringGap(g2d, frc, "Top", curY, curX, width2, true);
+    curX = addStringGap(g2d, frc, "Bottom", curY, curX, width2, true);
+    curX = addStringGap(g2d, frc, "Left", curY, curX, width2, true);
+    curX = addStringGap(g2d, frc, "Right", curY, curX, width2, true);
+
+    curY += height * 2.0;
+    Iterator it = itemList.listIterator();
+    while (it.hasNext()) {
+      DesignItem2 item = (DesignItem2) it.next();
+      curX = 0;
+      curX = addStringGap(g2d, frc, item.getType(), curY, curX, width1, false);
+      curX = addStringGap(g2d, frc, item.getItemCode(), curY, curX, width1, false);
+      curX = addStringGap(g2d, frc, item.getOwnCode(), curY, curX, width1, false);
+      if (item.getDesignType() == Designer.ITEM_FRAME) {
+        double length = item.getDesignHeight();
+        length -= item.getMaterialDets().getDefaultValues().getWidth() +
+            item.getMaterialDets().getDefaultValues().getRebate();
+        curX = addStringGap(g2d, frc, Utils.getCurrencyFormat(length), curY,
+                            curX, width2, true);
+        double width = item.getDesignWidth();
+        width -= item.getMaterialDets().getDefaultValues().getWidth() +
+            item.getMaterialDets().getDefaultValues().getRebate();
+        curX = addStringGap(g2d, frc, Utils.getCurrencyFormat(width), curY,
+                            curX, width2, true);
+      }
+      else {
+        curX = addStringGap(g2d, frc,
+                            Utils.getCurrencyFormat(item.getDesignHeight()),
+                            curY, curX, width2, true);
+        curX = addStringGap(g2d, frc,
+                            Utils.getCurrencyFormat(item.getDesignWidth()),
+                            curY, curX, width2, true);
+        curX = addStringGap(g2d, frc,
+                            Utils.getCurrencyFormat(item.getDesignTopGap()),
+                            curY, curX, width2, true);
+        curX = addStringGap(g2d, frc,
+                            Utils.getCurrencyFormat(item.getDesignBottomGap()),
+                            curY, curX, width2, true);
+        curX = addStringGap(g2d, frc,
+                            Utils.getCurrencyFormat(item.getDesignLeftGap()),
+                            curY, curX, width2, true);
+        curX = addStringGap(g2d, frc,
+                            Utils.getCurrencyFormat(item.getDesignRightGap()),
+                            curY, curX, width2, true);
+      }
+      curY += height * 1.5;
+    }
+
+    return Printable.PAGE_EXISTS;
+  }
+
+  private double addStringGap(Graphics2D g2d, FontRenderContext frc, String s,
+                              double top, double left, double width,
+                              boolean alignRight) {
+    try {
+      TextLayout layout = new TextLayout(s, g2d.getFont(), frc);
+      Rectangle2D bounds = layout.getBounds();
+      double w = bounds.getWidth();
+      if (alignRight) {
+        layout.draw(g2d, (float) (left + width - w), (float) top);
+      }
+      else {
+        layout.draw(g2d, (float) left, (float) top);
+      }
+    }
+    catch (IllegalArgumentException e) {
+    }
+    return left + width;
+  }
+}

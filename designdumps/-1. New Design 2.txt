@@ -1,0 +1,13 @@
+Design Code: -1       Title: New Design 2       Date: 20070821
+
+Item           Item Code      Own Code       Height         Width          Top Face       Bottom Face    Left Face      Right Face     
+Artwork                                      200.00         200.00         100.00         100.00         100.00         100.00         
+Board          1000           ~1000          271.00         271.00         30.00          30.00          30.00          30.00          
+Frame          048G           ~048G          269.00         269.00         15.00          15.00          15.00          15.00          
+
+
+Item           Item Code      Top Border     Bottom Border  Left Border    Right Border   Cost           Price          
+Artwork                       0.00           0.00           0.00           0.00           
+Board          1000           35.50          35.50          35.50          35.50          52.35          209.40         
+Frame          048G           15.00          15.00          15.00          15.00          12.50          50.00          
+

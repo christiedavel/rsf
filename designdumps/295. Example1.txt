@@ -1,0 +1,15 @@
+Design Code: 295       Title: Example1       Date: 20050608
+
+Item           Item Code      Own Code       Height         Width          Top Face       Bottom Face    Left Face      Right Face     
+Artwork                                      500.00         500.00         250.00         250.00         250.00         250.00         
+Slip           LS002D         ~LS002D        534.00         534.00         11.00          11.00          11.00          11.00          
+Board          1038           ~1038          793.00         793.00         130.00         130.00         130.00         130.00         
+Frame          LS816C         ~LS816C        844.00         844.00         68.00          68.00          68.00          68.00          
+
+
+Item           Item Code      Top Border     Bottom Border  Left Border    Right Border   Cost           Price          
+Artwork                       0.00           0.00           0.00           0.00           
+Slip           LS002D         17.00          17.00          17.00          17.00          9.50           33.25          
+Board          1038           135.50         135.50         135.50         135.50         52.35          183.22         
+Frame          LS816C         68.00          68.00          68.00          68.00          35.70          124.95         
+

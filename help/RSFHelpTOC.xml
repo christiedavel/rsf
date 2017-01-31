@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='ISO-8859-1'  ?>
+<!DOCTYPE toc
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN"
+         "http://java.sun.com/products/javahelp/toc_1_0.dtd">
+
+<toc version="1.0">
+ <tocitem text="RSF Environment" image="toplevelfolder">
+
+   <tocitem text="Introduction to RSF" target="intro.introduction">
+       <tocitem text="The RSF Environment" target="intro.environment"/>
+       <tocitem text="The RSF Main Tool Bar" target="intro.maintoolbar"/>
+       <tocitem text="Environment Settings" target="intro.settings"/>
+   </tocitem>
+
+   <tocitem text="Registration" target="registration.registration">
+       <tocitem text="By Phone" target="registration.registerbyphone"/>
+       <tocitem text="Over the internet" target="registration.registeroverinternet"/>
+   </tocitem>
+
+   <tocitem text="Capturing of Information" target="capturing.capturing">
+       <tocitem text="The Data Tool Bar" target="capturing.datatoolbar"/>
+       <tocitem text="The Scrolling Tool Bar" target="capturing.scrollingtoolbar"/>
+       <tocitem text="Materials" target="capturing.materials"/>
+   </tocitem>
+
+   <tocitem text="Designs" target="designs.designs">
+       <tocitem text="Definitions" target="designs.definitions"/>
+       <tocitem text="Design Methods" target="designs.designmethods"/>
+       <tocitem text="Setting Preferences" target="designs.preferences"/>
+       <tocitem text="Creating a new design" target="designs.creatingnewdesign"/>
+       <tocitem text="Adding design items" target="designs.addingitems"/>
+       <tocitem text="Inserting design items" target="designs.insertingitems"/>
+       <tocitem text="Deleting design items" target="designs.deleteitem"/>
+       <tocitem text="Opening existing desings" target="designs.opendesigns"/>
+       <tocitem text="Closing designs" target="designs.closingdesigns"/>
+       <tocitem text="Updating design preferences" target="designs.updatingpreferences"/>
+       <tocitem text="Method Preferences" target="designs.methodprefences"/>
+       <tocitem text="Deleting designs" target="designs.deletedesigns"/>
+   </tocitem>
+
+   <tocitem text="Backup and Restore" target="backup.backup">
+   </tocitem>
+
+   <tocitem text="The Stock Process" target="stockprocess.stockprocess">
+   </tocitem>
+
+   <tocitem text="How to" target="howto.howto">
+       <tocitem text="Create a Design" target="howto.adddesign"/>
+       <tocitem text="Add Materials" target="howto.addmaterials"/>
+       <tocitem text="Add Suppliers" target="howto.addsuppliers"/>
+       <tocitem text="Add a Box Frame" target="howto.addbox"/>
+       <tocitem text="Print a design" target="howto.printdesign"/>
+   </tocitem>
+ </tocitem>
+</toc>

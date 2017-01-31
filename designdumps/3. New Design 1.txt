@@ -1,0 +1,19 @@
+Design Code: 3       Title: New Design 1       Date: 20040623
+
+Item           Item Code      Own Code       Height         Width          Top Face       Bottom Face    Left Face      Right Face     
+Artwork                                      200.00         200.00         100.00         100.00         100.00         100.00         
+Board          1000           ~1000          360.00         360.00         50.00          50.00          50.00          50.00          
+Slip           AL10G          ~AL10G         328.00         328.00         8.00           8.00           8.00           8.00           
+Board          1007           ~1007          393.50         393.50         33.00          33.00          33.00          33.00          
+Frame          LS816W         ~LS816W        444.00         444.00         68.00          68.00          68.00          68.00          
+Back           back           ~back          503.50         503.50         191.00         191.00         191.00         191.00         
+
+
+Item           Item Code      Top Border     Bottom Border  Left Border    Right Border   Cost           Price          
+Artwork                       0.00           0.00           0.00           0.00           
+Board          1000           80.00          80.00          80.00          80.00          52.35          208.88         
+Slip           AL10G          14.00          14.00          14.00          14.00          18.30          73.02          
+Board          1007           38.75          38.75          38.75          38.75          52.35          208.88         
+Frame          LS816W         0.00           0.00           0.00           0.00           36.80          146.83         
+Back           back           0.00           0.00           0.00           0.00           30.26          120.73         
+

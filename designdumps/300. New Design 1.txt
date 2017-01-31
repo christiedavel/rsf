@@ -1,0 +1,13 @@
+Design Code: 300       Title: New Design 1       Date: 20070902
+
+Item           Item Code      Own Code       Height         Width          Top Face       Bottom Face    Left Face      Right Face     
+Artwork                                      200.00         200.00         100.00         100.00         100.00         100.00         
+Board          1000           ~1000          300.00         300.00         50.00          50.00          50.00          50.00          
+Back           2mm            ~2mm           300.00         300.00         150.00         150.00         150.00         150.00         
+
+
+Item           Item Code      Top Border     Bottom Border  Left Border    Right Border   Cost           Price          
+Artwork                       0.00           0.00           0.00           0.00           
+Board          1000           50.00          50.00          50.00          50.00          60.52          242.07         
+Back           2mm            0.00           0.00           0.00           0.00           50.00          200.00         
+

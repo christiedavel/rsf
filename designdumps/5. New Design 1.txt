@@ -1,0 +1,13 @@
+Design Code: 5       Title: New Design 1       Date: 20040905
+
+Item           Item Code      Own Code       Height         Width          Top Face       Bottom Face    Left Face      Right Face     
+Artwork                                      200.00         200.00         100.00         100.00         100.00         100.00         
+Board          1001           ~1001          299.50         299.50         50.00          50.00          50.00          50.00          
+Frame          001A           ~001A          337.00         337.00         55.00          55.00          55.00          55.00          
+
+
+Item           Item Code      Top Border     Bottom Border  Left Border    Right Border   Cost           Price          
+Artwork                       0.00           0.00           0.00           0.00           
+Board          1001           55.75          55.75          55.75          55.75          52.35          208.88         
+Frame          001A           0.00           0.00           0.00           0.00           35.45          141.45         
+

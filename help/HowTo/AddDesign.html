@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.0.1  (Linux)">
+	<META NAME="CREATED" CONTENT="20030630;11424000">
+	<META NAME="CHANGED" CONTENT="20030924;10361200">
+</HEAD>
+<BODY LANG="en-US">
+<P><FONT SIZE=6><B>Creating a Design</B></FONT></P>
+<P>RSF needs the attributes of each of the material items in a design
+in order to calculate the price of the design and the cutting list.
+As a result all material items that will be used in the design must
+be entered into the RSF materials database before the design is
+created. See the Capturing of Information section for help with
+<A HREF="../capturing/materials.html">capturing material data</A>. In
+addition, the <I>Howto</I> manual has step-by-step directions for the
+capturing of new material details. 
+</P>
+<P><FONT SIZE=5><B>Saving scanned artworks in the correct format</B></FONT></P>
+<P>The format of a file can be obtained by looking at the extension
+of the file. For example, the extension of the Microsoft Word file
+'<I>LetterToJohn.doc</I>' is <I>doc.</I> Only picture files of type
+'<I>gif</I>' or '<I>jpg</I>' can be used in RSF. An example of such
+files would be <I>'MonaLisa.gif'</I> or <I>'MonaLisa.jpg'</I>. 
+</P>
+<P>Sometimes the extention of files are not displayed. In such
+instances, <I>“LetterToJohn”</I> wil be displayed in stead of
+<I>“LetterToJohn.doc”</I>. If you have Microsoft Windows, try the
+following to display the file extentions: 
+</P>
+<UL>
+	<LI><P>Open the Windows Explorer 
+	</P>
+	<LI><P>Navigate to My Computer 
+	</P>
+	<LI><P>On the toolbar, select Tools 
+	</P>
+	<LI><P>Select Folder Options 
+	</P>
+	<LI><P>View Tab 
+	</P>
+	<LI><P>Untick &quot;Hide file extensions for known file types&quot; 
+	</P>
+</UL>
+<P><FONT SIZE=5><B>Material Attributes</B></FONT></P>
+<P><FONT SIZE=4>The design created in this example will consist of
+the artwork itself, mount board 1, mount board 2, a slip, the frame,
+glass and a back. These material items have the following attributes:
+</FONT>
+</P>
+<P><B>The Artwork</B><BR>RSF gives you an option to use a default
+picture to represent all artworks, a default colour can be used to
+represent artworks, or the artwork can be scanned. If the artwork is
+scanned, make sure that it is saved with either a <I>jpg</I> or <I>gif</I>
+extension. Save the picture file in the following the directory:<BR><I>&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;RSF Installation directory&gt;\images\Artworks</I><BR>RSF will search in this
+directory for images during the design process.</P>
+<P>In this example the following picture will be framed. The filename
+of this picture is <I>'darkdunes-t.jpg'</I> and it has been saved in
+the appointed directory. 
+</P>
+<P><IMG SRC="darkdunes-t.jpg" NAME="Graphic1" ALIGN=LEFT WIDTH=269 HEIGHT=248 BORDER=0><BR CLEAR=LEFT><B>Picture</B><BR>Picture
+width = 270mm<BR>Picture height = 210mm<BR>Sight line width = 260
+mm<BR>Sight line height = 200 mm 
+</P>
+<P><B>Mount Board 1</B><BR>Item Code = xx-9000<BR>Top Face = 12
+mm<BR>Left Face = 12 mm<BR>Right Face = 12 mm<BR>Bottom Face = 12 mm 
+</P>
+<P><B>Mount Board 2</B><BR>Item Code = xx-9002<BR>Top Face = 45
+mm<BR>Left Face = 45 mm<BR>Right Face = 45 mm<BR>Bottom Face = 54 mm
+(There is a difference in the bottom and top face) 
+</P>
+<P><B>Slip</B><BR>Item Code = C1A<BR>Rebate = 6 mm (Double check this
+measurement)</P>
+<P><B>NOTE:</B> Before using a slip or a frame for the first time,
+double check the rebate measurements. If rebate measurements are
+wrongly specified in RSF, the cutting list will be faulty. At RSF we
+will take every precaution to ensure that measurements are correct,
+but we do find that the rebate measurements are not consistent. We
+would thus recommend that users double check the rebate of all frames
+and slips before using it for the first time. 
+</P>
+<P><B>Frame</B><BR>Item Code = xx-9001<BR>Rebate = 6 mm (Double check
+this measurement)</P>
+<P><B>Glass</B><BR>Item Code = glass2cf 
+</P>
+<P><B>Back</B><BR>Item Code = back1</P>
+<P><FONT SIZE=5><B>Procedure for creating a new design</B></FONT></P>
+<P><FONT SIZE=4>The following is a step-by-step explanation of the
+process that needs to be followed when creating a new design.</FONT> 
+</P>
+<UL>
+	<LI><P>Open a new design by clicking on the 
+	<IMG SRC="../../images/NewDesign.gif" NAME="Graphic31" ALIGN=BOTTOM WIDTH=20 HEIGHT=20 BORDER=0>
+	button. Note that users can save the design throughout the design
+	process to prevent loss of information.</P>
+	<LI><P>The following window will be displayed.<BR></P>
+	<P><IMG SRC="MAddArtwork.png" NAME="Graphic3" ALIGN=LEFT WIDTH=400 HEIGHT=204 BORDER=0><BR CLEAR=LEFT><BR>Enter
+	the sight line measurements of the artwork in the space provided.
+	Note that the sight line measurements will usually be smaller than
+	the size of the artwork itself. A colour can be selected to
+	represent the artwork, or if the artwork was scanned and saved in
+	the correct directory, the artwork can be selected from the dropdown
+	box. If the artwork is not to be added at this stage, select none.</P>
+	<LI><P>The follwing window will be displayed after the filename
+	<I>'darkdunes-t.jpg'</I> has been selected.<BR></P>
+	<P><IMG SRC="MDArtwork.png" NAME="Graphic4" ALIGN=LEFT WIDTH=763 HEIGHT=469 BORDER=0><BR CLEAR=LEFT><P>
+	<LI><P>Add mount board 1 by clicking the 
+	<IMG SRC="../../images/BoardAdd.gif" NAME="Graphic23" ALIGN=BOTTOM WIDTH=19 HEIGHT=21 BORDER=0>
+	button. The following window will be displayed.<BR></P>
+	<P><IMG SRC="MBoardAdd.png" NAME="Graphic5" ALIGN=LEFT WIDTH=400 HEIGHT=294 BORDER=0><BR CLEAR=LEFT><BR>Select
+	the item code from the Item Code dropdown box. If the colour
+	displayed on the screen does not match the colour of the board,
+	click on the colour indicator and select a more appropriate colour.
+	Note that an item code must be selected before the colour indicator
+	will become active. The colour chooser has three different methods
+	of selecting colours. Users can choose the method which they find to
+	work the easiest. 
+	</P>
+	<P>There are variation in the rendering of colours by different
+	computer screens and as a result users must specify the colours
+	themselves. Once specified however, the colours will be rendered the
+	same in consecutive designs. 
+	</P>
+	<P>Users also has the option to specify cutom overlaps. If custom
+	overlaps are not enabled, RSF will apply the settings specified in
+	the Method Preferences. 
+	</P>
+	<P>Enter the face measurement values of the edges. If the user wants
+	the face measurements of all four edges to be equal, the <I>Match
+	All</I> checkbox should be checked. In this instance, it will only
+	be necessary to supply the top face measurement.</P>
+	<LI><P>Click OK to return to the main window. Repeat the process to
+	add mount board 2. When adding mount board 2, do not check the <I>Match
+	All</I> checkbox and enter the different face measurements of all
+	four edges. After both mount boards have been added, the design will
+	be diplayed in the main window as shown below.<BR></P>
+	<P><IMG SRC="MDBoard.png" NAME="Graphic6" ALIGN=LEFT WIDTH=771 HEIGHT=503 BORDER=0><BR CLEAR=LEFT><P>
+	<LI><P>Add a slip to the design by selecting the material item which will be on
+	the outside of the slip and click the 
+	<IMG SRC="../../images/SlipAdd.gif" NAME="Graphic24" ALIGN=BOTTOM WIDTH=20 HEIGHT=20 BORDER=0>
+	button. The following window will be displayed. <B>Note:</B> Select
+	material items by clicking on the item in the graphical display or
+	by double-clicking on the material item in the material item list.
+	Remember to double check the rebate measurement.<BR></P>
+	<P><IMG SRC="MSlipAdd.png" NAME="Graphic7" ALIGN=LEFT WIDTH=300 HEIGHT=204 BORDER=0><BR CLEAR=LEFT><BR>Select
+	the correct slip from the item code dropdown box and adjust the
+	colour if needed. Click on the OK button.</P>
+	<LI><P>Add a frame by clicking on the 
+	<IMG SRC="../../images/FrameAdd.gif" NAME="Graphic25" ALIGN=BOTTOM WIDTH=19 HEIGHT=21 BORDER=0>
+	button. The following window will be displayed. Remember to double
+	check the measurements of the rebate. Do this by selecting Materials
+	| Frames on the Main toolbar and then locating the frame by using
+	the find (<IMG SRC="../../images/Find.gif" NAME="Graphic27" ALIGN=BOTTOM WIDTH=20 HEIGHT=20 BORDER=0>)
+	function.<BR></P>
+	<P><IMG SRC="MFrameAdd.png" NAME="Graphic8" ALIGN=LEFT WIDTH=400 HEIGHT=194 BORDER=0><BR CLEAR=LEFT><P>
+	<LI><P>The new design with the slip and frame will now be displayed in the main
+	window.<BR></P>
+	<P><IMG SRC="MDFrame.png" NAME="Graphic9" ALIGN=LEFT WIDTH=755 HEIGHT=496 BORDER=0><BR CLEAR=LEFT><P>
+	<LI><P>Add glass by clicking on the 
+	<IMG SRC="../../images/GlassAdd.gif" NAME="Graphic26" ALIGN=BOTTOM WIDTH=20 HEIGHT=20 BORDER=0>
+	button. The following window will be displayed. The size of the
+	glass is determined by fitting the glass to a certain material item.
+	Select the material item to which the glass must fit, in this case
+	the frame, and select whether the glass must fit to the inside or
+	outside of that material item.<BR>
+	</P>
+	<P><IMG SRC="MGlassAdd.png" NAME="Graphic10" ALIGN=LEFT WIDTH=300 HEIGHT=284 BORDER=0><BR CLEAR=LEFT><P>
+	<LI><P>Add the back by clicking on the 
+	<IMG SRC="../../images/BackAdd.gif" NAME="Graphic28" ALIGN=BOTTOM WIDTH=20 HEIGHT=20 BORDER=0>
+	button. The following window will be displayed. The size of the back
+	is determined by fitting the back to a certain material item. As in
+	the case with the glass, select the material item to which the glass
+	must fit and specify whether it must fit to the inside or outside of
+	that material item.<BR></P>
+	<P><IMG SRC="MBackAdd.png" NAME="Graphic11" ALIGN=LEFT WIDTH=300 HEIGHT=284 BORDER=0><BR CLEAR=LEFT><P>
+	<LI><P>The finished design will then be graphically displayed in the main
+	window. Add client details by clicking on the 
+	<IMG SRC="../../images/ToClients.gif" NAME="Graphic29" ALIGN=BOTTOM WIDTH=20 HEIGHT=20 BORDER=0>
+	button and artist details by clicking on the 
+	<IMG SRC="../../images/ToArtists.gif" NAME="Graphic30" ALIGN=BOTTOM WIDTH=20 HEIGHT=20 BORDER=0>
+	button or select an existing client and artist from the dropdown
+	boxes. 
+	</P>
+	<LI><P>Print a cutting list and a stock list by setting the design
+	status to '<I>In Order</I>' and then clicking on the Print (<IMG SRC="../../images/Print.gif" NAME="Graphic2" ALIGN=BOTTOM WIDTH=20 HEIGHT=20 BORDER=0>)
+	button. 
+	</P>
+</UL>
+</BODY>
+</HTML>

@@ -1,0 +1,11 @@
+Design Code: 9       Title: fghchchh       Date: 20040927
+
+Item           Item Code      Own Code       Height         Width          Top Face       Bottom Face    Left Face      Right Face     
+Artwork                                      200.00         200.00         100.00         100.00         100.00         100.00         
+Frame          TD3D           ~TD3D          246.00         246.00         70.00          70.00          70.00          70.00          
+
+
+Item           Item Code      Top Border     Bottom Border  Left Border    Right Border   Cost           Price          
+Artwork                       0.00           0.00           0.00           0.00           
+Frame          TD3D           0.00           0.00           0.00           0.00           22.00          87.78          
+

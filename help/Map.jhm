@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE map
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 1.0//EN"
+         "http://java.sun.com/products/javahelp/map_1_0.dtd">
+
+<map version="1.0">
+        <mapID target="toplevelfolder" url="images/toplevel.gif" />
+        <mapID target="toc" url="/TOC.html" />
+
+        <mapID target="backup.backup" url="backup/backupandrestore.html" />
+
+        <mapID target="capturing.capturing" url="capturing/capturing.html" />
+        <mapID target="capturing.datatoolbar" url="capturing/datatoolbar.html" />
+        <mapID target="capturing.materials" url="capturing/materials.html" />
+        <mapID target="capturing.scrollingtoolbar" url="capturing/scrollingtoolbar.html" />
+
+        <mapID target="designs.designs" url="designs/designs.html" />
+        <mapID target="designs.addingitems" url="designs/addingitems.html" />
+        <mapID target="designs.closingdesigns" url="designs/closingdesigns.html" />
+        <mapID target="designs.creatingnewdesign" url="designs/creatingnewdesign.html" />
+        <mapID target="designs.definitions" url="designs/definitions.html" />
+        <mapID target="designs.deletedesigns" url="designs/deletedesigns.html" />
+        <mapID target="designs.deleteitem" url="designs/deleteitem.html" />
+        <mapID target="designs.designmethods" url="designs/designmethods.html" />
+        <mapID target="designs.insertingitems" url="designs/insertingitems.html" />
+        <mapID target="designs.methodprefences" url="designs/methodprefences.html" />
+        <mapID target="designs.opendesigns" url="designs/opendesigns.html" />
+        <mapID target="designs.preferences" url="designs/preferences.html" />
+        <mapID target="designs.updatingpreferences" url="designs/updatingpreferences.html" />
+
+        <mapID target="intro.environment" url="intro/environment.html" />
+        <mapID target="intro.introduction" url="intro/introduction.html" />
+        <mapID target="intro.maintoolbar" url="intro/maintoolbar.html" />
+        <mapID target="intro.settings" url="intro/settings.html" />
+
+        <mapID target="registration.registerbyphone" url="registration/registerbyphone.html" />
+        <mapID target="registration.registeroverinternet" url="registration/registeroverinternet.html" />
+        <mapID target="registration.registration" url="registration/registration.html" />
+
+        <mapID target="stockprocess.stockprocess" url="HowTo/StockProcess.html" />
+
+        <mapID target="howto.howto" url="HowTo/HowTo.html" />
+        <mapID target="howto.adddesign" url="HowTo/AddDesign.html" />
+        <mapID target="howto.addmaterials" url="HowTo/AddMaterials.html" />
+        <mapID target="howto.addsuppliers" url="HowTo/AddSuppliers.html" />
+        <mapID target="howto.addbox" url="HowTo/CreateBox.html" />
+        <mapID target="howto.printdesign" url="HowTo/printdesign.html" />
+
+</map>

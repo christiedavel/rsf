@@ -1,0 +1,265 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.0.1  (Linux)">
+	<META NAME="CREATED" CONTENT="20030707;10502200">
+	<META NAME="CHANGED" CONTENT="20030924;9480600">
+</HEAD>
+<BODY LANG="en-US">
+<P><B><FONT SIZE=6>The Stock Process in RSF</FONT></B> 
+</P>
+<P><FONT SIZE=5><B>1. Introduction</B></FONT></P>
+<P><FONT SIZE=4>The aim of the RSF Stock Control system is to ensure
+that the stock figures displayed in RSF are a true representation of
+the physical stock in your business. In theory, the quantity of stock
+can only change if one of the following events occur: </FONT>
+</P>
+<UL>
+	<LI><P><FONT SIZE=4>New Stock arrives (increase the amount of stock)</FONT></P>
+	<LI><P><FONT SIZE=4>Offcuts are posted ( increase the amount of
+	stock)</FONT></P>
+	<LI><P><FONT SIZE=4>A design is created (decrease the amount of
+	stock)</FONT></P>
+	<LI><P><FONT SIZE=4>Stock units are sold (decrease the amount of
+	stock)</FONT></P>
+</UL>
+<P><FONT SIZE=5><B>2. New Stock is ordered</B></FONT></P>
+<P><FONT SIZE=4>The material information must be captured before
+material items can be added to the stock of your business. See the
+Capturing of Information section for help with <A HREF="../capturing/materials.html">capturing
+material data</A>. In addition, the <I>Howto</I> manual has
+step-by-step directions for the capturing of new material details. It
+is also possible to download all material information from the
+internet. Note that the fact that the material information has been
+captured, does not mean that it is automatically added to the stock. </FONT>
+</P>
+<P><FONT SIZE=4>After the stock has been ordered, the following will
+happen:<BR>1. Physical stock arrives from the supplier.<BR>2. Stock
+entered into in RSF Stock Control System.</FONT></P>
+<P><FONT SIZE=4><B>Enter stock into the RSF Stock Control System as
+follow:</B></FONT></P>
+<OL TYPE=i>
+	<LI><P><FONT SIZE=4>Select Stock | Orders In on the Main menu.</FONT></P>
+	<LI><P><FONT SIZE=4>The Orders In dialog will be displayed as shown
+	below.<BR></FONT></P>
+	<P><IMG SRC="MOrdersIn.png" NAME="Graphic4" ALIGN=LEFT WIDTH=730 HEIGHT=504 BORDER=0><BR CLEAR=LEFT><FONT SIZE=4><BR>Enter
+	all the relevant order information that will appear on the delivery
+	note or invoice. Make sure that the following information has been
+	entered correctly before saving: </FONT>
+	</P>
+	<UL>
+		<LI><P><FONT SIZE=4>Date (If the correct date has not been
+		specified, click on the ellipses button to select the date.)</FONT></P>
+		<LI><P><FONT SIZE=4>Enter the invoice number. </FONT>
+		</P>
+	</UL>
+	<LI><P><FONT SIZE=4>Click on the 
+	<IMG SRC="../../images/NewDesign.gif" NAME="Graphic23" ALIGN=BOTTOM WIDTH=20 HEIGHT=20 BORDER=0>
+	button to ad a new record to the grid. It will then be possible to
+	enter the details of the material items. When the Type, Supplier or
+	Item Code cells are selected, an small arrow appears in the cell.
+	Click on the arrow to display a dropdown box. If the information is
+	entered in a left to right sequence with Material Type first, then
+	Supplier and followed by the Item Code, the dropdown boxes will act
+	as filters. For example, only the item codes of the selected
+	supplier will appear in the dropdown box in the item code column.
+	The item code dropdown box will only appear if a supplier has been
+	specified. Dropdown boxes do not appear when entering the length,
+	width or number of items. The width of frames need not be specified.
+	</FONT>
+	</P>
+	<LI><P><FONT SIZE=4>The 
+	<IMG SRC="../../images/Delete2.gif" NAME="Graphic24" ALIGN=BOTTOM WIDTH=20 HEIGHT=20 BORDER=0>
+	button will permanently delete the selected record.</FONT></P>
+	<LI><P><FONT SIZE=4>Save the information regularly by clicking the
+	Save (<IMG SRC="../../images/SaveDesign.gif" NAME="Graphic25" ALIGN=BOTTOM WIDTH=20 HEIGHT=20 BORDER=0>)
+	button.</FONT></P>
+	<LI><P><FONT SIZE=4>When new material information is saved, a
+	stock-id is generated for every stock item. The stock-id's that has
+	been generated for the specific material items of the selected entry
+	in the grid, will be displayed in the Stock ID listbox. This can be
+	seen in the figure below. Seven stock-id's are displayed in the
+	Stock Id listbox, because seven lengths of frame xxx-9001 has been
+	ordered. If the next record in the grid should be selected, the five
+	stock-id's of frame xx-9000 will be displayed in the listbox. The
+	aim is to allocated a unique stock-id to each of the ordered
+	material items.<BR></FONT></P>
+	<P><IMG SRC="MOrdersInInfo.png" NAME="Graphic6" ALIGN=LEFT WIDTH=730 HEIGHT=500 BORDER=0><BR CLEAR=LEFT><P>
+	<LI><P><FONT SIZE=4>Mark
+	each item with it's stock-id by using a permanent marker or sticker
+	and store the marked items. </FONT>
+	</P>
+	<LI><P><FONT SIZE=4>Close the Orders In window by clicking on the 
+	<IMG SRC="../../images/Close.gif" NAME="Graphic26" ALIGN=BOTTOM WIDTH=20 HEIGHT=20 BORDER=0>
+	button.</FONT></P>
+	<LI><P><FONT SIZE=4>If needed, it is possible to specify the
+	location of stock items. Select Stock | Current stock on the main
+	toolbar. The Current Stock window will be displayed. The location of
+	single items can be specified by selecting the stock id in the Stok
+	Id listbox before entering the location, or by toggeling the radio
+	buttons to Single Items before specifying a location. The location
+	of grouped items are specified by toggeling the radio buttons to
+	Group Items. Grouped items are then displayed in the grid. Make sure
+	that a stock-id has not been selected in the Stokd Id listbox before
+	entering the location. Click on the close button (<IMG SRC="../../images/Close.gif" NAME="Graphic27" ALIGN=BOTTOM WIDTH=20 HEIGHT=20 BORDER=0>)
+	to close the window. The location will be saved automatically.</FONT></P>
+</OL>
+<P><FONT SIZE=5><B>3. Allocate material to a Design</B></FONT></P>
+<P><FONT SIZE=4>Before material can be allocated, an existing design
+must be selected or a new design created. See the Designs section for
+help with <A HREF="../designs/creatingnewdesign.html">creating a new
+design</A>. In addition, the Howto manual has step-by-step
+directions. </FONT>
+</P>
+<P><FONT SIZE=4>Allocate stock to a design after the design has been
+finalised, by clicking on the Allocate stock to Design button (<IMG SRC="../../images/Stocker.gif" NAME="Graphic19" ALIGN=BOTTOM WIDTH=20 HEIGHT=20 BORDER=0>).
+The following window will be displayed. </FONT>
+</P>
+<P><IMG SRC="MAllocateStock.png" NAME="Graphic7" ALIGN=LEFT WIDTH=700 HEIGHT=504 BORDER=0><BR CLEAR=LEFT><FONT SIZE=4><BR>Before
+displaying the above window, the RSF software will attempt to
+optimise the allocation of stock. If it was successful, suggested
+material items will be selected. The user only need to confirm the
+RSF selection, but also has the option of changing it. If the
+optimization of stock allocation was not possible, no stock items
+will be selected in this window when it opens. The user then need to
+select the stock items needed for the design. This process can be
+simplified by using the material type filter at the top of the
+window. Only the selected material type will be listed and that will
+streamline the selection of material items. Please note that stock
+allocation is not done according to the design name, but according to
+the design code. This is to prevent confusion in instances where more
+than one design may have the same design name. When satisfied with
+the selected material items, click on the Allocate button to save the
+stock allocation of the design. </FONT>
+</P>
+<P><FONT SIZE=4>It is possible to navigate to another design without
+closing this window by simply selecting another design code from the
+dropdown box. If another design code has been selected without
+clicking the Allocate button first, the user will be asked if the new
+selection must be updated. If the user clicks the<I> No </I>button,
+the allocation information will be lost. </FONT>
+</P>
+<P><FONT SIZE=4>After material items has been allocated to a specific
+design, the selected items will be locked, and it will not be
+possible to use the same items in other designs. It is possible to
+change the stock allocation. Simply repeat the process described
+above. </FONT>
+</P>
+<P><FONT SIZE=4>Close this window by clicking the 
+<IMG SRC="../../images/Close.gif" NAME="Graphic20" ALIGN=BOTTOM WIDTH=20 HEIGHT=20 BORDER=0>
+button. </FONT>
+</P>
+<P><FONT SIZE=5><B>4. Post Offcuts</B></FONT></P>
+<P><FONT SIZE=4>The figure below is an example of the printed offcut
+list.</FONT></P>
+<P><IMG SRC="MOffcutPrintout.jpg" NAME="Graphic11" ALIGN=LEFT WIDTH=675 HEIGHT=323 BORDER=0><BR CLEAR=LEFT><FONT SIZE=4>The
+offcut list contains all the material items in the design. Measure
+the length and width of the offcuts in the space provided. Users have
+the option to either post the offcuts immediately or at a later
+stage. </FONT>
+</P>
+<P><FONT SIZE=4>To post offcuts, select Stock | Offcuts on the Main
+toolbar. The offcut window will be displayed as shown below. </FONT>
+</P>
+<P><IMG SRC="MPostOffcuts.png" NAME="Graphic8" ALIGN=LEFT WIDTH=650 HEIGHT=454 BORDER=0><BR CLEAR=LEFT><FONT SIZE=4><BR>Post
+the offcuts as follow:</FONT></P>
+<UL>
+	<LI><P><FONT SIZE=4>Ensure that the correct date has been selected</FONT></P>
+	<LI><P><FONT SIZE=4>Select the Design Code for which offcuts are to
+	be posted.</FONT></P>
+	<LI><P><FONT SIZE=4>Click on the 
+	<IMG SRC="../../images/Add.gif" NAME="Graphic21" ALIGN=BOTTOM WIDTH=20 HEIGHT=20 BORDER=0>
+	button to create a new entry.</FONT></P>
+	<LI><P><FONT SIZE=4>Supply the required material information. Note
+	that the Stock Id is not accessible.</FONT></P>
+	<LI><P><FONT SIZE=4>Click on the Save button (<IMG SRC="../../images/SaveDesign.gif" NAME="Graphic22" ALIGN=BOTTOM WIDTH=20 HEIGHT=20 BORDER=0>).
+	RSF will then generate a new Stock Id for the material items.</FONT></P>
+	<LI><P><FONT SIZE=4>Mark the offcuts with their new Stock Id and
+	return the item to the stock storeroom.</FONT></P>
+	<LI><P><FONT SIZE=4>If needed, it is possible to specify the
+	location of each material item as described above.</FONT></P>
+	<LI><P><FONT COLOR="#000000"><FONT SIZE=4>Repeat the above steps for
+	each of the offcut material items.</FONT></FONT></P>
+</UL>
+<P><FONT SIZE=4>The process described above requires that the framing
+process itself be organised in a specific way. If users should choose
+not to post the offcuts immediately after the materials for each
+design has been cut, it is recommended that a intermediary shelve be
+created. All the offcuts are put on the intermediary shelve, grouped
+together according to design. Offcuts on the intermediary shelve are
+then posted at regular intervals. </FONT>
+</P>
+<P><FONT SIZE=5><B>5. Removing stock from the RSF Stock Control
+System </B></FONT>
+</P>
+<P><FONT SIZE=4>RSF realise that it is sometimes necessary to remove
+stock form the system without using it in a design. This will
+typically happen when stock is returned to the supplier or in
+instances where stock my be sold as is. Stock can be removed by
+selecting Stock | Sales and Returns from the main menu. The following
+window will be displayed. </FONT>
+</P>
+<P><IMG SRC="MStockSale.jpg" NAME="Graphic15" ALIGN=LEFT WIDTH=607 HEIGHT=432 BORDER=0><BR CLEAR=LEFT><FONT SIZE=4><BR>Select
+the stock items you want sell or return to the supplier and click the
+sell button. Follow these steps when stock needs to be removed from
+the RSF Stock Control System for whatever reason. </FONT>
+</P>
+<P><FONT SIZE=5><B>6. Stock Take</B></FONT></P>
+<P><FONT SIZE=4>In most types of business stocktaking is a
+timeconsuming process and needs to be planned in advance. The RSF
+Stock Control System does, however, go a long way to streamline the
+process. </FONT>
+</P>
+<P><FONT SIZE=4>Navigate to the Stock Taking window by selecting
+Stock | Stock Take on the main toolbar. </FONT>
+</P>
+<P><FONT SIZE=4>When the Stock Take window opens, click on the 
+<IMG SRC="../../images/NewDesign.gif" NAME="Graphic28" ALIGN=BOTTOM WIDTH=20 HEIGHT=20 BORDER=0>
+button to start a new stock-take session. Add material items to the
+stock-take session as follow: </FONT>
+</P>
+<UL>
+	<LI><P><FONT SIZE=4>Ensure that the correct date has been selected</FONT></P>
+	<LI><P><FONT SIZE=4>Click on the 
+	<IMG SRC="../../images/Add.gif" NAME="Graphic2" ALIGN=BOTTOM WIDTH=20 HEIGHT=20 BORDER=0>
+	button to create a new entry.</FONT></P>
+	<LI><P><FONT SIZE=4>Supply the required details for each material
+	item. If information is entered in a left to right sequence,
+	dropdown boxes will appear which will act as filters in order to
+	streamline datacapturing.</FONT></P>
+	<LI><P><FONT SIZE=4>Regularly click the Save button (<IMG SRC="../../images/SaveDesign.gif" NAME="Graphic3" ALIGN=BOTTOM WIDTH=20 HEIGHT=20 BORDER=0>).</FONT></P>
+	<LI><P><FONT SIZE=4>When the Save button is clicked, a new Stock ID
+	will be generated for each material item.</FONT></P>
+	<LI><P><FONT SIZE=4>Mark each material item with it's new Stock ID
+	and return the item to the store.</FONT></P>
+	<LI><P><FONT SIZE=4>It is not mandatory to complete the stock take
+	in one big session, as it is possible to exit the stock take session
+	and return to it later.</FONT></P>
+	<LI><P><FONT SIZE=4>When the stock take is finished, click the
+	Complete button. Note that once the user has clicked the Complete
+	button, it will not be possible to re-open the stock take session.</FONT></P>
+	<LI><P><FONT SIZE=4>Click on the Close button (<IMG SRC="../../images/Close.gif" NAME="Graphic5" ALIGN=BOTTOM WIDTH=20 HEIGHT=20 BORDER=0>)
+	to close the window.</FONT></P>
+</UL>
+<P><FONT SIZE=4>After the stock take has been completed, view the
+discrepancies by selecting Stock | Discrepancies on the main toolbar.
+The following window will be opened: </FONT>
+</P>
+<P><FONT SIZE=4><IMG SRC="MDiscrepancies.png" NAME="Graphic29" ALIGN=BOTTOM WIDTH=700 HEIGHT=504 BORDER=0></FONT></P>
+<P><FONT SIZE=4>This window displays discrepancies found during the
+stocktake. By selecting the dates of previous stock-takes in the
+dropdown box, it is possible to compare discrepancies of different
+stock-takes. </FONT>
+</P>
+<P><FONT SIZE=4>The business owner needs to determine the level of
+acceptable discrepancy and balance that with time constraints within
+the business. When the accuracy of offcut measurement increases, the
+level of discrepancy will decrease and vica versa. Accurately
+measuring offcuts is, however, more timeconsuming and the business
+owner under severe time pressure may decide to accept higher levels
+of discrepancy. </FONT>
+</P>
+</BODY>
+</HTML>

@@ -1,0 +1,19 @@
+Design Code: 290       Title: Spiderman - 2       Date: 20050408
+
+Item           Item Code      Own Code       Height         Width          Top Face       Bottom Face    Left Face      Right Face     
+Artwork                                      262.00         500.00         131.00         131.00         250.00         250.00         
+Board          61058          ~61058         342.00         580.00         20.00          20.00          20.00          20.00          
+Board          3360           ~3360          413.00         651.00         50.00          50.00          50.00          50.00          
+Frame          LS102L         ~LS102L        411.00         649.00         15.00          15.00          15.00          15.00          
+Glass          2mm            ~2mm           413.00         651.00         201.00         201.00         320.00         320.00         
+Back           back           ~back          413.00         651.00         201.00         201.00         320.00         320.00         
+
+
+Item           Item Code      Top Border     Bottom Border  Left Border    Right Border   Cost           Price          
+Artwork                       0.00           0.00           0.00           0.00           
+Board          61058          40.00          40.00          40.00          40.00          75.50          264.25         
+Board          3360           55.50          55.50          55.50          55.50          52.35          183.22         
+Frame          LS102L         15.00          15.00          15.00          15.00          10.70          37.45          
+Glass          2mm            0.00           0.00           0.00           0.00           54.00          189.00         
+Back           back           0.00           0.00           0.00           0.00           30.26          105.91         
+
