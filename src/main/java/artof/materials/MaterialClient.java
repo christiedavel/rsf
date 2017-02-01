@@ -1,28 +1,44 @@
 package artof.materials;
 
 import artof.database.ArtofDB;
+import artof.designitems.DesignBoard;
+import artof.designitems.DesignFoil;
+import artof.designitems.DesignFrame;
+import artof.designitems.DesignGlassAndBack;
+import artof.designitems.DesignSlip;
 import artof.utils.UserSettings;
 import artof.utils.UserSettings2;
 import artof.utils.Utils;
+import mats.importer.MaterialData;
+import mats.importer.MaterialGroups;
+import mats.importer.Materials;
+import mats.importer.Suppliers;
+import mats.importer.Values;
 
-import artof.designitems.*;
 import javax.swing.*;
-import java.awt.*;
-import javax.swing.border.*;
-import java.awt.event.*;
-import java.net.*;
-
-import mats.importer.*;
-
-import java.util.*;
-import java.io.*;
-import java.awt.image.BufferedImage;
-
+import javax.swing.border.Border;
+import javax.swing.border.EtchedBorder;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
-
-import org.xml.sax.SAXParseException;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Random;
 
 
 /**

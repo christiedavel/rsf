@@ -128,6 +128,33 @@
             </plugin>
 
         </plugins>
+        <resources>
+            <resource>
+                <directory>${basedir}/designdumps</directory>
+                <targetPath>${basedir}/target/designdumps</targetPath>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>${basedir}/help</directory>
+                <targetPath>${basedir}/target/help</targetPath>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>${basedir}/images</directory>
+                <targetPath>${basedir}/target/images</targetPath>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>${basedir}/logs</directory>
+                <targetPath>${basedir}/target/logs</targetPath>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>${basedir}/rsfdb</directory>
+                <targetPath>${basedir}/target/rsfdb</targetPath>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
 
     </build>
 
